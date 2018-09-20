@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.3",
-	"appid": "wx281d3020ec123e78",
+	"appid": "XXXXXXXXXXXXXXX",   //小程序appid
 	"projectname": "myWeather",
 	"isGameTourist": false,
 	"condition": {

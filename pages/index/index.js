@@ -8,8 +8,8 @@
  */
 const qqMapWx = require('../../libs/qqmap-wx/qqmap-wx-jssdk.min.js')
 const util = require('../../utils/util')
-const HEFENG_KEY = '6a1c384fb2b1427c986b5bfccb5012e4'
-const TXMAP_KEY = 'GXCBZ-UEC3W-J6QRI-ORNQC-WAZTT-QDB2G'
+const HEFENG_KEY = 'XXXXXXXXXXXXXXXXXXXXX'  //修改为和风天气key
+const TXMAP_KEY = 'XXXXXXXXXXXXXXXXXX'   //修改为腾讯地图key
 const DEFAULT_URL = 'https://free-api.heweather.com/s6'
 const echarts = require('../../ec-canvas/echarts.common.min.js')
 
