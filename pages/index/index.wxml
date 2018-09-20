@@ -1,0 +1,78 @@
+<!--index.wxml-->
+<wxs src="./index.wxs" module="utils"></wxs>
+<view class="weather" style="height:{{showAuth ? '100%' : 'auto'}}">
+  <view hidden="{{!showAuth}}" class="auth">
+    <image src="../../assets/images/icon/auth.svg" />
+    <text>需要获取您的地理位置，请确认授权，否则天气预报功能将无法使用</text>
+    <button open-type="openSetting" bind:opensetting="getAuthorizeLocation" lang="zh_CN" size="default" type="primary">打开授权设置页</button>
+  </view>
+  <view hidden="{{showAuth}}" class="container">
+    <!-- 定位 -->
+    <view class="location">
+      <image class="location-icon" src="../../assets/images/icon/loaction.svg" mode="aspectFill" />
+      <text class="location-text">{{location}}</text>
+    </view>
+    <!-- 实时天气信息 -->
+    <view class="now-weather">
+      <!-- 空气质量 -->
+      <view class="weather-air">
+        <text style="background-color:{{airBackgroundColor}}"></text>
+        <text>{{airQlty}}</text>
+      </view>
+      <!-- 温度和天气 -->
+      <view class="weather-temperature">
+        <text class="weather-temperature-num">{{nowWeather.tmp}}</text>
+        <text class="weather-temperature-text">o {{nowWeather.cond_txt}}</text>
+      </view>
+      <!-- 风向、相对湿度和压强 -->
+      <view class="weather-whp">
+        <view>
+          <image src="../../assets/images/icon/direction.svg" style="transform:rotate({{rotateNum}}deg)" />
+          <text>{{nowWeather.wind_sc}}级</text>
+        </view>
+        <view>
+          <image src="../../assets/images/icon/water.svg" />
+          <text>{{nowWeather.hum}}%</text>
+        </view>
+        <view>
+          <image src="../../assets/images/icon/pressure.svg" />
+          <text>{{nowWeather.pres}}hPa</text>
+        </view>
+      </view>
+    </view>
+    <!-- 今天、明天和后天天气预报 -->
+    <view class="forecast">
+      <view wx:for="{{threeForecast}}" class="forecast-item">
+        <view class="forecast-item-info">
+          <view class="forecast-item-txt">{{utils.setDateTxt(index,isDayNight)}}</view>
+          <view class="forecast-item-tmp">{{item.tmp_min}}℃~{{item.tmp_max}}℃</view>
+          <view class="forecast-item-weatherTxt">
+            {{index===0&&isDayNight?item.cond_txt_n:item.cond_txt_d}}
+          </view>
+        </view>
+        <view class="forecast-item-icon">
+          <image src="../../assets/images/weather/{{index===0&&isDayNight?item.cond_code_n:item.cond_code_d}}.png" />
+        </view>
+      </view>
+    </view>
+    <!-- 24小时预报 -->
+    <view class="hourly-forecast">
+      <ec-canvas id="hourly-forecast-echarts" canvas-id="hourly-echarts" ec="{{ ecHourly }}"></ec-canvas>
+    </view>
+    <!-- 7天预报 -->
+    <view class="seven-forecast">
+      <ec-canvas id="seven-forecast-echarts" canvas-id="seven-echarts" ec="{{ ecSeven }}"></ec-canvas>
+    </view>
+    <!-- 生活指数 -->
+    <view class="life">
+      <view class="life-title">生活指数</view>
+      <view class="life-content">
+        <view wx:for="{{life}}" class="life-item">
+          <image src="{{utils.getLifeIcon(index)}}" />
+          <text class="life-value">{{item.brf}}</text>
+          <text class="life-txt">{{utils.getLifeTxt(index)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

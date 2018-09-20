@@ -1,0 +1,33 @@
+var list = ['今天', '明天', '后天']
+var lifeIcon = [
+  '../../assets/images/icon/comf.svg',
+  '../../assets/images/icon/drsg.svg',
+  '../../assets/images/icon/flu.svg',
+  '../../assets/images/icon/sport.svg',
+  '../../assets/images/icon/trav.svg',
+  '../../assets/images/icon/uv.svg',
+  '../../assets/images/icon/cw.svg',
+  '../../assets/images/icon/air.svg'
+]
+var lifeTxt = ['舒适度', '穿衣', '感冒', '运动', '旅游', '紫外线','洗车','空气质量']
+
+function setDateTxt(i,isDayNight) {
+  if (i === 0 && isDayNight) {
+    return '今晚'
+  }
+  return list[i]
+}
+
+function getLifeIcon (index) {
+  return lifeIcon[index]
+}
+
+function getLifeTxt (index) {
+  return lifeTxt[index]
+}
+
+module.exports = {
+  setDateTxt: setDateTxt,
+  getLifeIcon: getLifeIcon,
+  getLifeTxt: getLifeTxt
+}

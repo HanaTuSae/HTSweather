@@ -1,0 +1,235 @@
+/**index.wxss**/
+page {
+  width: 100%;
+  height: 100%;
+  font-size: 36rpx;
+}
+
+.weather {
+  width: 100%;
+  overflow: auto;
+  color: #fff;
+  box-sizing: border-box;
+  background:url('https://hanatusae.oss-cn-shenzhen.aliyuncs.com/cloud.jpg') center center no-repeat fixed, linear-gradient(#c1d2f0, #2d8af5);
+  background-size: cover;
+}
+
+.auth {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth > image {
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: 100rpx;
+}
+
+.auth > text {
+  width: 100%;
+  padding: 0 60rpx;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-bottom: 150rpx;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.location, .now-weather, .forecast-item-info {
+  padding-left: 20rpx;
+}
+
+.location-text {
+  flex: 1;
+  font-size: 36rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.location-icon, .weather-whp > view > image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.now-weather {
+  position: relative;
+  height: auto;
+}
+
+.weather-temperature {
+  height: 300rpx;
+}
+
+.weather-temperature-num {
+  font-size: 280rpx;
+}
+
+.weather-temperature-text {
+  font-size: 80rpx;
+  vertical-align: top;
+  padding-top: 20rpx;
+  display: inline-block;
+}
+
+.weather-whp {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.weather-whp > view {
+  margin-right: 40rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.weather-whp > view > image {
+  padding-right: 10rpx;
+}
+
+.weather-air {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 30rpx;
+  top: 20rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.weather-air > text:first-child {
+  height: 12rpx;
+  width: 80rpx;
+  display: inline-block;
+  margin-bottom: 10rpx;
+}
+
+.weather-air > text:last-child {
+  width: 80rpx;
+  white-space: normal;
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.forecast {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 100rpx;
+}
+
+.forecast-item {
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.forecast-item:not(:last-child) {
+  border-bottom: 1px solid #fff;
+}
+
+.forecast-item-info {
+  width: 50%;
+  color: #fff;
+}
+
+.forecast-item-icon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.forecast-item-icon > image {
+  width: 100rpx;
+  height: 100rpx;
+  position: relative;
+  left: -100rpx;
+  border-right:240rpx solid transparent;
+  filter: drop-shadow(240rpx 0 #fff);
+}
+
+.hourly-forecast {
+  width: 100%;
+  height: 500rpx;
+  margin-top: 30rpx;
+}
+
+.seven-forecast {
+  width: 100%;
+  height: 800rpx;
+  margin-top: 30rpx;
+}
+
+.life {
+  height: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: 30rpx;
+}
+
+.life-title {
+  padding: 4rpx 0 0 12rpx;
+}
+
+.life-content {
+  margin-top: 30rpx;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.life-item {
+  width: 25%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 0;
+  padding: 20rpx 0;
+}
+
+.life-item > image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.life-value {
+  margin: 10rpx 0;
+  font-size: 32rpx;
+}
+
+.life-txt {
+  font-size: 24rpx;
+  color: #dedede;
+}
